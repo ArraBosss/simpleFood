@@ -3,6 +3,74 @@
 @import 'reset';
 @import 'global';
 
+.header {
+  padding: 60px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+
+display: flex;
+align-items: center;
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 44px;
+  }
+
+  &__link {
+    font-size: 18px;
+    color: $default;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+}
+
+.user-nav {
+  display: flex;
+
+  &__link {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    background-size: 19px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  &__num {
+    position: absolute;
+    right: -3px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: $accent;
+
+  }
+}
+
+
+
+
 
 
 @import 'media';
