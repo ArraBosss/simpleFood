@@ -45,12 +45,19 @@
 
 }
 
+.title {
+  @extend %rubik-500;
+  font-size: 36px;
+  line-height: 1.3;
+  color: $title;
+}
+
 .header {
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 58px 4px;
+    padding: 58px 0 58px 4px;
   }
 
 }
@@ -80,7 +87,7 @@
 
   &__list {
     display: flex;
-    margin-right: 51px;
+    margin-right: 49px;
   }
 
   &__item:not(:last-child) {
@@ -98,22 +105,31 @@
 
 .user-nav {
   display: flex;
+  align-items: flex-end;
 
   &__link {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 44px;
     height: 44px;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: transparent;
+    border-radius: 5px;
     transition: background-color 0.5s;
+    
+
 
     &:not(:last-child) {
-      margin-right: 9px;
+      margin-right: 13px;
     }
 
     &:hover {
       background-color: $accent;
+      box-shadow: none;
+    }
+    &:active {
+      background-color: #FFF2ED;
     }
 
   }
@@ -121,7 +137,7 @@
   &__num {
     position: absolute;
     right: 3px;
-    top: 6px;
+    top: 8px;
     width: 14px;
     height: 14px;
     text-align: center;
@@ -203,6 +219,69 @@
 
 }
 
+.food {
+  text-align: center;
+
+  .title {
+    margin-bottom: 60px;
+  }
+
+  &__filter {
+    margin-bottom: 45px;
+  }
+
+  &__filter {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__btn {
+    padding: 22px 32px 22px 86px;
+    font-size: 20px;
+    line-height: 1.3;
+    color: $title;
+    background-color: #fff;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 44px auto;
+    background-position: center left 32px;
+    border-radius: 5px;
+    transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
+
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .footer-top {
   display: flex;
   padding-bottom: 60px;
@@ -281,24 +360,32 @@
     display: flex;
   }
 
-  &__item--social:not(:last-child) {
-    margin: 0 13px 0 0;
-  }
-
-  &__link--icon {
-    display: block;
+  &__item--social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 39px;
     height: 39px;
     background-color: #ECECEC;
-    background-repeat: no-repeat;
     border-radius: 50%;
-    background-position: center;
-    background-size: auto;
     transition: background-color 0.5s, fill 0.5s;
+
+    &:not(:last-child) {
+      margin: 0 13px 0 0;
+
+    }
 
     &:hover {
       background-color: $accent;
     }
+
+  }
+
+
+
+  &__link--icon {
+    margin-bottom: -6px;
+
   }
 
 }
@@ -309,10 +396,6 @@
   padding: 30px 0;
   border-top: 1px solid #C2C2C2;
 }
-
-
-
-
 
 
 @import 'media';
