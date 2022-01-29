@@ -11,8 +11,7 @@ body {
   font-style: normal;
   color: $default;
   background-color: #F9FAFF;
-  @extend %rubik-400;
-  
+  @extend %rubik-400; 
 }
 
 .main {
