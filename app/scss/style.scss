@@ -22,7 +22,7 @@
 
 }
 
-.main__btn {
+.btn {
   color: #fff;
   background-color: $accent;
 
@@ -281,7 +281,6 @@
 
     svg path {
       transition: fill 0.5s;
-      ;
     }
 
     &:hover {
@@ -328,6 +327,11 @@
     background-color: #fff;
     box-shadow: 0 0 0 1px #ECECEC;
     border-radius: 5px;
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: 0 0 0 1px rgba(255, 104, 56, 0.7);
+    }
   }
 
   &__img {
@@ -370,15 +374,8 @@
     }
   }
 
-  &:active {
-    color: $title;
-    background-color: #fff;
-    box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
-
-    svg path {
-      fill: $title;
-    }
-  }
+ 
+  
 
 }
 
