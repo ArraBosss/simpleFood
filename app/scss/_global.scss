@@ -10,7 +10,7 @@ body {
   line-height: 1.3;
   color: $default;
   background-color: #F9FAFF;
-  
+
 }
 
 .wrapper {
@@ -32,6 +32,19 @@ body {
   padding-top: 120px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .animation {
   &:hover {
     color: $accent;
@@ -50,9 +63,12 @@ body {
 
 }
 
-.btn {
-  color: #fff;
+.button {
+  display: inline-block;
+  font-size: 18px;
+  color: $white;
   background-color: $accent;
+  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
 
   &:hover {
     color: $accent;
@@ -102,7 +118,7 @@ body {
 }
 
 .title {
- font-weight: 500px;
+  font-weight: 500;
   font-size: 36px;
   line-height: 1.3;
   color: $title;
