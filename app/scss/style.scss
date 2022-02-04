@@ -75,8 +75,8 @@
     }
 
     svg {
-      width: 19px;
-      height: 19px;
+      width: 20px;
+      height: 20px;
     }
 
     svg path,
@@ -163,7 +163,7 @@
   &__background {
     width: 100%;
     background-repeat: no-repeat;
-    background-size: 560px auto;
+    background-size: 560px 660px;
     background-position: right top;
   }
 }
@@ -367,7 +367,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
-  margin-bottom: 60px;
 }
 
 .resturents-card {
@@ -411,6 +410,7 @@
 
     svg {
       margin-bottom: -2px;
+      transition: transform 0.7s;
     }
 
     svg path {
@@ -418,6 +418,10 @@
     }
 
     &:hover {
+      svg {
+        transform: translateX(20px);
+      }
+
       svg path {
         fill: $accent;
       }
@@ -440,6 +444,7 @@
 }
 
 .slider {
+  position: relative;
 
   &__title {
     text-align: center;
@@ -449,6 +454,7 @@
   &__content {
     display: flex;
     align-items: center;
+    margin-bottom: 55px;
     padding: 0 90px;
 
   }
@@ -518,47 +524,107 @@
     justify-content: center;
 
     li {
+      padding-bottom: 10px;
+
       &:not(:last-child) {
         margin-right: 15px;
       }
-      
+
       button {
-        padding: 0;
         font-size: 0;
         background-color: #C2C2C2;
         width: 15px;
         height: 15px;
         border-radius: 50%;
+        transition: background-color 0.5s, box-shadow 0.5s;
+
+        &:hover {
+          background-color: #FFF2ED;
+          box-shadow: 0 0 0 2px $box-shadow;
+        }
+
+        &:focus {
+          background: #C2C2C2;
+          box-shadow: 0 0 0 2px $accent;
+        }
+
+        &:active {
+          box-shadow: none;
+          background-color: #FFAE94;
+        }
 
 
       }
 
-     
+      &.slick-active {
+        button {
+          background-color: $accent;
 
-      &.slick-active {}
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+
+
+
+
     }
   }
 
   .slick-arrow {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    font-size: 0;
 
-    li {
-      button {}
-
-      &.slick-active {}
+    svg path,
+    circle {
+      transition: fill 0.5s, stroke 0.5s;
     }
+
+    &:hover {
+      border-radius: 50%;
+      background-color: #FFF2ED;
+
+      svg path{
+        fill: $accent;
+      }
+      svg circle {
+        stroke: $accent;
+      }
+    }
+
+    &:focus {
+
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px $box-shadow;
+    }
+
+    &:active {
+      background-color: #FFF2ED;
+      box-shadow: none;
+
+      svg circle {
+        stroke: #FFF2ED;
+      }
+      svg path {
+        fill: $accent;
+      }
+    }
+
+
+  }
+
+  .prev-arrow {
+    left: 473px;
+  }
+
+  .next-arrow {
+    right: 473px;
   }
 
 }
-
-
-
-
-
-
-
-
 
 
 .apps {
@@ -636,7 +702,7 @@
     line-height: 2;
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: 24px auto;
+    background-size: 24px 24px;
 
     &--location {
       background-image: url('../images/decor/location.svg')
@@ -729,7 +795,7 @@
     }
   }
 
-  &__icon {
+  &__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -739,7 +805,7 @@
     border-radius: 50%;
     transition: all 0.5s;
 
-    svg path {
+    &__icon svg path {
       transition: fill 0.5s;
     }
 
