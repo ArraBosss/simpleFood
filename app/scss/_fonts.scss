@@ -17,6 +17,15 @@
     url('../fonts/Rubik-Light.woff') format('woff');
   font-display: swap;
 }
+@font-face {
+  font-family: 'Rubik-Italic';
+  font-weight: 300;
+  font-style: normal;
+  src:
+    url('../fonts/Rubik-Italic.woff2') format('woff2'),
+    url('../fonts/Rubik-Italic.woff') format('woff');
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'Rubik';
