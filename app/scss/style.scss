@@ -376,6 +376,7 @@
   max-width: 370px;
   background-color: $white;
   border-radius: 10px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.5s;
 
   &:hover {
@@ -383,6 +384,7 @@
   }
 
   &__img {
+    border-radius: 10px 10px 0 0;
     margin-bottom: 15px;
   }
 
@@ -834,6 +836,194 @@
       svg path {
         fill: $accent;
       }
+    }
+  }
+}
+
+// Новая
+
+.catalog-nav {
+  margin-bottom: 58px;
+  background: rgba(255, 122, 80, 0.1);
+
+  &__list {
+    display: flex;
+    padding: 24px 0;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #505050;
+
+    &:not(:first-child) {
+      position: relative;
+      margin-left: 6px;
+      padding-left: 12px;
+    }
+
+    &:not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 6px;
+      height: 10px;
+      background-image: url('../images/decor/chevron.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.catalog {
+
+  &__header {
+    margin-bottom: 60px;
+  }
+
+  &__inner {
+    display: flex;
+  }
+}
+
+.filter-aside {
+  max-width: 271px;
+  width: 100%;
+  margin-right: 30px;
+
+  &__criteria {
+    margin-bottom: 28px;
+    background: $white;
+    border: 1px solid #ECECEC;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  &__title {
+    padding: 15px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid #ECECEC;
+  }
+
+  &__list {
+    padding: 25px 15px;
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__label {
+    padding-left: 36px;
+    letter-spacing: 0.03em;
+
+    &:hover+.filter-aside__style {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+
+  &__style {
+    position: absolute;
+    margin-left: -36px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #ECECEC;
+    background-color: #FAEDED;
+  }
+
+  &__сheckbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:focus+.filter-aside__style {
+      border-color: $accent;
+    }
+
+    &:checked+.filter-aside__style::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 9px;
+      background-image: url('../images/decor/сheck.svg');
+    }
+
+    &:checked+.filter-aside__style {
+      border-color: $title;
+    }
+  }
+}
+
+.stoke {
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+
+  &__item {
+    .resturents-card {
+      display: block;
+    }
+  }
+}
+
+.filter-price {
+
+  &__inner {
+   
+    padding: 24px 15px;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #C2C2C2;
+
+    &:not(:last-child) {
+      margin-right: 18px;
+    }
+  }
+
+  &__num {
+    max-width: 72px;
+    width: 100%;
+    height: 41px;
+    margin-right: 3px;
+    text-align: center;
+    background-color: #FAEDED;
+    border: transparent;
+    border-radius: 3px;
+
+    &::placeholder {
+      text-align: center;
+      color: $default
+    }
+
+    &:focus::placeholder {
+      color: transparent
     }
   }
 }
