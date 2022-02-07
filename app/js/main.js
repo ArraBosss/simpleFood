@@ -22,4 +22,4 @@ $(function () {
 
 
 
-var mixer = mixitup('.top-products');
+var mixer = mixitup('.popular__menu');

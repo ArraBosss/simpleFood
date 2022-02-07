@@ -44,7 +44,31 @@ body {
   overflow: hidden;
 }
 
+.logo {
+  transition: opacity 0.5s;
+
+  img {
+    object-fit: cover;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px $box-shadow;
+    border-radius: 5px;
+  }
+
+  &:active {
+    opacity: 0.5;
+    box-shadow: none;
+  }
+}
+
 .animation {
+  transition: color 0.5s, box-shadow 0.5s, text-shadow 0.5s;
+
   &:hover {
     color: $accent;
   }
@@ -63,7 +87,9 @@ body {
 
 .button {
   display: inline-block;
+  padding: 12px 32px;
   font-size: 18px;
+  border-radius: 6px;
   color: $white;
   background-color: $accent;
   transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
@@ -114,6 +140,7 @@ body {
 }
 
 .title {
+  margin-bottom: 45px;
   font-weight: 500;
   font-size: 36px;
   line-height: 1.3;
