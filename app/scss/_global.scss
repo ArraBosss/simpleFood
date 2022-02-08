@@ -148,14 +148,19 @@ body {
 }
 
 .burger {
-  
-  position: relative;
-  z-index: 2;
+ 
   width: 44px;
   height: 44px;
 
   span {
+    position: relative;
     top: 21px;
+    right: 0;
+    width: 30px;
+    height: 2px;
+    z-index: 2;
+    background-color: $black;
+    transition: transform 0.3s;
   }
 
   &.active {
@@ -164,9 +169,8 @@ body {
     }
   }
 
-  &::before,
-  &::after,
-  span {
+  span::before,
+  span::after {
     content: '';
     position: absolute;
     z-index: 2;
@@ -177,22 +181,26 @@ body {
     transition: transform 0.3s;
   }
 
-  &::before {
+  span::before {
     top: 12px;
   }
 
-  &::after {
+  span::after {
     bottom: 12px;
   }
 
-  &.active::before {
-    top: 21px;
-    transform: rotate(45deg);
+  &.active::before { 
+    span{
+      top: 21px;
+      transform: rotate(45deg);
+    }
   }
 
   &.active::after {
-    bottom: 21px;
-    transform: rotate(-45deg);
+    span {
+      bottom: 21px;
+      transform: rotate(-45deg);
+    } 
   }
 
     
