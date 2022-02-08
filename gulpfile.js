@@ -7,6 +7,8 @@ const imagemin = require('gulp-imagemin');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 const svgSprite = require('gulp-svg-sprite');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
 
 
 
@@ -50,6 +52,16 @@ function scripts() {
 
 function svgSprites() {
   return src('app/images/icons/*.svg') 
+  .pipe(cheerio({
+    run: ($) => {
+        $("[fill]").removeAttr("fill"); 
+        $("[stroke]").removeAttr("stroke"); 
+        $("[style]").removeAttr("style"); 
+    },
+    parserOptions: { xmlMode: true },
+  })
+)
+.pipe(replace('&gt;','>')) 
     .pipe(
       svgSprite({
         mode: {
