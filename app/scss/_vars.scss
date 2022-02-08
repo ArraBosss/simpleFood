@@ -4,3 +4,10 @@ $title: #363853;
 $white: #FFFFFF;
 $black: #000000;
 $box-shadow: rgba(255, 104, 56, 0.7);
+
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1230px
+);

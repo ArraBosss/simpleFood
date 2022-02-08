@@ -130,6 +130,10 @@
     color: $title;
     margin-bottom: 20px;
     @include line-clamp(2);
+
+    @include mq('desktop') {
+      font-size: 50px;
+    }
   }
 
   &__item {
@@ -153,6 +157,7 @@
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+
   }
 }
 
@@ -383,7 +388,7 @@
   transition: box-shadow 0.5s;
 
   img {
-    object-fit: fill;
+    object-fit: cover;
   }
 
   &:hover {
@@ -839,7 +844,7 @@
     &:hover {
       background-color: $accent;
 
-      svg  {
+      svg {
         fill: $white;
       }
     }
@@ -848,7 +853,7 @@
       background-color: #FFF2ED;
       box-shadow: 0 0 0 2px $box-shadow;
 
-      svg  {
+      svg {
         fill: $default;
       }
     }
@@ -857,7 +862,7 @@
       background-color: #FFF2ED;
       box-shadow: none;
 
-      svg  {
+      svg {
         fill: $accent;
       }
     }
