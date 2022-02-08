@@ -3,6 +3,7 @@
 @import 'vars';
 @import 'global';
 @import 'libs';
+@import 'mixin';
 
 .header {
   &__wrapper {
@@ -14,31 +15,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 58px 0 58px 4px;
-  }
-}
-
-.logo {
-  transition: opacity 0.5s;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 2px $box-shadow;
-    border-radius: 5px;
-  }
-
-  &:active {
-    opacity: 0.5;
-    box-shadow: none;
   }
 }
 
 .menu {
   display: flex;
-  margin-right: 49px;
+  margin: 0 50px 0 auto;
 
   &__item {
     &:not(:last-child) {
@@ -55,6 +39,12 @@
 .user-nav {
   display: flex;
 
+  &__item {
+    &:not(:last-child) {
+      margin-right: 11px;
+    }
+  }
+
   &__btn {
     position: relative;
     display: flex;
@@ -62,12 +52,9 @@
     align-items: center;
     width: 44px;
     height: 44px;
+    padding: 0;
     background-color: transparent;
     border-radius: 5px;
-
-    &:not(:last-child) {
-      margin-right: 13px;
-    }
 
     span {
       transition: color 0.7s, background-color 0.7s;
@@ -76,10 +63,12 @@
     svg {
       width: 20px;
       height: 20px;
+      fill: none;
+      stroke: $title;
+      stroke-width: 1.5;
     }
 
-    svg path,
-    ellipse {
+    svg {
       transition: stroke 0.7s;
     }
 
@@ -87,8 +76,7 @@
       background-color: $accent;
       box-shadow: none;
 
-      svg path,
-      ellipse {
+      svg {
         stroke: $white;
       }
 
@@ -101,8 +89,7 @@
     &:active {
       background-color: #FFF2ED;
 
-      svg path,
-      ellipse {
+      svg {
         stroke: $title;
       }
     }
@@ -124,13 +111,14 @@
 }
 
 .hero {
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__content {
-    padding: 155px 0;
     max-width: 450px;
   }
 
@@ -141,6 +129,11 @@
     text-transform: uppercase;
     color: $title;
     margin-bottom: 20px;
+    @include line-clamp(2);
+
+    @include mq('desktop') {
+      font-size: 50px;
+    }
   }
 
   &__item {
@@ -151,19 +144,20 @@
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 20px;
+    @include line-clamp(3);
   }
 
   &__btn {
     margin-right: 32px;
-    padding: 12px 32px;
-    border-radius: 6px;
   }
 
-  &__background {
+  &__img {
+    max-width: 560px;
+    height: 660px;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: 560px 660px;
-    background-position: right top;
+    background-size: cover;
+
   }
 }
 
@@ -173,13 +167,23 @@
   &__title {
     margin-bottom: 60px;
   }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 60px;
+  }
 }
 
 .filter-product {
   display: flex;
-  margin-bottom: 45px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 
   &__item {
+    margin-bottom: 20px;
+
     &:not(:last-child) {
       margin-right: 20px;
     }
@@ -198,10 +202,13 @@
     border-radius: 5px;
 
     svg {
+      width: 44px;
+      height: 44px;
       margin-right: 10px;
     }
 
-    svg path {
+    svg {
+      fill: $title;
       transition: fill 0.5s;
     }
 
@@ -210,7 +217,7 @@
       box-shadow: 0 0 0 2px $box-shadow;
       color: $accent;
 
-      svg path {
+      svg {
         fill: $accent;
       }
     }
@@ -225,7 +232,7 @@
       background-color: $white;
       box-shadow: inset 0 -5px 12px rgba(255, 104, 56, 0.2);
 
-      svg path {
+      svg {
         fill: $title;
       }
     }
@@ -236,19 +243,9 @@
     color: $white;
     background-color: $accent;
 
-    svg path {
+    svg {
       fill: $white;
     }
-  }
-}
-
-.top-poducts {
-
-  &__menu {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 30px;
-    margin-bottom: 60px;
   }
 }
 
@@ -264,6 +261,10 @@
   box-shadow: 0 0 0 1px #ECECEC;
   border-radius: 5px;
 
+  img {
+    object-fit: contain;
+  }
+
   &:hover {
     box-shadow: 0 0 0 1px $box-shadow;
   }
@@ -273,11 +274,12 @@
   }
 
   &__title {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     font-size: 15px;
     font-weight: 400;
-    min-height: 46px;
+    min-height: 45px;
     color: $default;
+    @include line-clamp(2);
   }
 
   &__price {
@@ -300,30 +302,33 @@
 
   &__title {
     margin-bottom: 28px;
+    @include line-clamp(2);
   }
 
   &__wrapper {
     display: flex;
-    padding: 0 68px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
   }
 
-  &__background {
+  &__img {
     max-width: 440px;
     width: 100%;
-    margin-right: 120px;
+    height: 585px;
     background-repeat: no-repeat;
-    background-size: 440px 585px;
+    background-size: cover;
   }
 
   &__content {
     max-width: 470px;
-    padding: 60px 0;
   }
 
   &__text p {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
+    @include line-clamp(4);
   }
 
   &__list {
@@ -336,39 +341,42 @@
     line-height: 1.5;
     background-repeat: no-repeat;
     background-size: 34px;
+    @include line-clamp(2);
 
     &:not(:last-child) {
       margin-bottom: 20px;
     }
 
     &--clock {
-      background-image: url('../images/decor/clock.svg')
+      background-image: url('../images/decor/clock.svg');
+      background-position: left center;
     }
 
     &--delivery {
-      background-image: url('../images/decor/delivery.svg')
+      background-image: url('../images/decor/delivery.svg');
+      background-position: left center;
     }
 
     &--resturent {
-      background-image: url('../images/decor/resturent.svg')
+      background-image: url('../images/decor/resturent.svg');
+      background-position: left center;
     }
   }
 }
 
-.top-resturents {
+.top-restaurants {
   &__title {
     text-align: center;
-    margin-bottom: 42px;
   }
 }
 
-.top-resturents__list {
+.top-restaurants__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
-.resturents-card {
+.restaurants-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -376,22 +384,29 @@
   max-width: 370px;
   background-color: $white;
   border-radius: 10px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.5s;
+
+  img {
+    object-fit: cover;
+  }
 
   &:hover {
     box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
   }
 
   &__img {
+    border-radius: 10px 10px 0 0;
     margin-bottom: 15px;
   }
 
   &__title {
-    padding-left: 20px;
+    padding: 0 20px;
     margin-bottom: 20px;
     font-size: 24px;
     line-height: 1.3;
     font-weight: 400;
+    @include line-clamp(2);
   }
 
   &__wrapper {
@@ -416,12 +431,11 @@
     border-radius: 20px;
 
     svg {
+      width: 14px;
+      height: 13px;
       margin-bottom: -2px;
-      transition: transform 0.7s;
-    }
-
-    svg path {
-      transition: fill 0.5s;
+      fill: $white;
+      transition: fill 0.5s, transform 0.5s;
     }
 
     &:hover {
@@ -429,7 +443,7 @@
         transform: translateX(20px);
       }
 
-      svg path {
+      svg {
         fill: $accent;
       }
     }
@@ -437,24 +451,26 @@
     &:focus {
       border-radius: 20px;
 
-      svg path {
+      svg {
         fill: $accent;
       }
     }
 
     &:active {
       border-radius: 20px;
-
     }
   }
 }
 
-.slider {
+.slider-reviews {
   position: relative;
+
+  img {
+    object-fit: cover;
+  }
 
   &__title {
     text-align: center;
-    margin-bottom: 45px;
   }
 
   &__content {
@@ -469,43 +485,39 @@
     border-radius: 50%;
   }
 
-  &__review {
-    max-width: 650px;
-  }
-
   &__blockquote {
-    position: relative;
+    max-width: 650px;
     padding: 0 40px;
-
-    &::before {
-      position: absolute;
-      content: '';
-      background-image: url('../images/decor/quotes_1.svg');
-      background-repeat: no-repeat;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-    }
-
-    &::after {
-      position: absolute;
-      content: '';
-      background-image: url('../images/decor/quotes_2.svg');
-      background-repeat: no-repeat;
-      top: 132px;
-      right: 0;
-      left: 96%;
-      bottom: 0;
-    }
   }
 
   &__text p {
+    position: relative;
     font-family: 'Rubik-Italic';
     max-width: 570px;
     margin-bottom: 30px;
     font-size: 20px;
     line-height: 1.5;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      background-image: url('../images/decor/quotes.svg');
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 20px;
+    }
+
+    &::before {
+      top: 0;
+      left: -40px;
+    }
+
+    &::after {
+      transform: scaleX(-1);
+      right: -40px;
+      bottom: 0;
+    }
   }
 
   &__client {
@@ -516,11 +528,13 @@
     font-style: normal;
     line-height: 1.3;
     color: $accent;
+    @include line-clamp(1);
   }
 
   &__rank {
     font-size: 14px;
     line-height: 130%;
+    @include line-clamp(1);
   }
 
   &__nav {
@@ -570,11 +584,12 @@
       }
 
       &.slick-active {
+
         button {
           background-color: $accent;
 
           &:focus {
-            box-shadow: none;
+            background-color: #C2C2C2;
           }
         }
       }
@@ -628,22 +643,23 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__title {
     font-size: 36px;
-    margin-bottom: 45px;
+    @include line-clamp(2);
   }
 
   &__text p {
-    margin-bottom: 30px;
+    margin-bottom: 33px;
     font-size: 20px;
     line-height: 1.5;
+    @include line-clamp(4);
   }
 
   &__content {
     max-width: 500px;
-    padding: 42px 0 40px;
   }
 
   &__list {
@@ -652,15 +668,16 @@
 
   &__item {
     &:not(:last-child) {
-      margin-right: 30px;
+      margin-right: 20px;
     }
   }
 
   &__img {
     max-width: 570px;
     width: 100%;
+    height: 380px;
     background-repeat: no-repeat;
-    background-size: 570px 380px;
+    background-size: cover;
   }
 }
 
@@ -690,28 +707,6 @@
     margin-bottom: 20px;
   }
 
-  &__contacts {
-    margin-bottom: 15px;
-    padding-left: 30px;
-    font-size: 16px;
-    line-height: 2;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 24px 24px;
-
-    &--location {
-      background-image: url('../images/decor/location.svg')
-    }
-
-    &--phone {
-      background-image: url('../images/decor/calling.svg')
-    }
-
-    &--message {
-      background-image: url('../images/decor/message.svg')
-    }
-  }
-
   &__bottom {
     display: flex;
     justify-content: center;
@@ -731,8 +726,8 @@
     display: block;
     max-width: 200px;
     width: 100%;
-    margin-bottom: 4px;
-    padding: 15px 13px;
+    margin-bottom: 10px;
+    padding: 13px 15px;
     background-color: $white;
     border: 1px solid #C2C2C2;
     border-radius: 5px;
@@ -753,34 +748,67 @@
 
   &__btn {
     display: flex;
-    align-items: center;
     max-width: 200px;
     width: 100%;
+    padding: 13px 40px;
     font-size: 14px;
     font-weight: 500;
-
-    padding: 13px 40px;
     line-height: 1.3;
     border-radius: 5px;
 
     svg {
+      width: 17px;
+      height: 16px;
       margin-right: 15px;
+      fill: $white;
     }
 
-    svg path {
+    svg {
       transition: fill 0.5s;
     }
 
     &:hover {
-      svg path {
+      svg {
         fill: $accent;
       }
     }
 
     &:focus {
-      svg path {
+      svg {
         fill: $accent;
       }
+    }
+  }
+}
+
+.contacts {
+
+  &__list {
+    margin-bottom: 15px;
+  }
+
+  &__item {
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 2;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &--location {
+      background-image: url('../images/decor/location.svg')
+    }
+
+    &--phone {
+      background-image: url('../images/decor/calling.svg')
+    }
+
+    &--message {
+      background-image: url('../images/decor/message.svg')
     }
   }
 }
@@ -804,16 +832,19 @@
     height: 39px;
     background-color: #ECECEC;
     border-radius: 50%;
-    transition: all 0.5s;
+    transition: background-color 0.5s;
 
-    &__icon svg path {
+    svg {
+      width: 21px;
+      height: 21px;
+      fill: $default;
       transition: fill 0.5s;
     }
 
     &:hover {
       background-color: $accent;
 
-      svg path {
+      svg {
         fill: $white;
       }
     }
@@ -822,7 +853,7 @@
       background-color: #FFF2ED;
       box-shadow: 0 0 0 2px $box-shadow;
 
-      svg path {
+      svg {
         fill: $default;
       }
     }
@@ -831,9 +862,197 @@
       background-color: #FFF2ED;
       box-shadow: none;
 
-      svg path {
+      svg {
         fill: $accent;
       }
+    }
+  }
+}
+
+// Новая cтр
+
+.catalog-nav {
+  margin-bottom: 58px;
+  background: rgba(255, 122, 80, 0.1);
+
+  &__list {
+    display: flex;
+    padding: 24px 0;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #505050;
+
+    &:not(:first-child) {
+      position: relative;
+      margin-left: 6px;
+      padding-left: 12px;
+    }
+
+    &:not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 6px;
+      height: 10px;
+      background-image: url('../images/decor/chevron.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.catalog {
+
+  &__header {
+    margin-bottom: 60px;
+  }
+
+  &__inner {
+    display: flex;
+  }
+}
+
+.filter-aside {
+  max-width: 271px;
+  width: 100%;
+  margin-right: 30px;
+
+  &__criteria {
+    margin-bottom: 28px;
+    background: $white;
+    border: 1px solid #ECECEC;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  &__title {
+    padding: 15px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid #ECECEC;
+  }
+
+  &__list {
+    padding: 25px 15px;
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__label {
+    padding-left: 36px;
+    letter-spacing: 0.03em;
+
+    &:hover+.filter-aside__style {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+
+  &__style {
+    position: absolute;
+    margin-left: -36px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #ECECEC;
+    background-color: #FAEDED;
+  }
+
+  &__сheckbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:focus+.filter-aside__style {
+      border-color: $accent;
+    }
+
+    &:checked+.filter-aside__style::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 9px;
+      background-image: url('../images/decor/сheck.svg');
+    }
+
+    &:checked+.filter-aside__style {
+      border-color: $title;
+    }
+  }
+}
+
+.stoke {
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+
+  &__item {
+    .restaurants-card {
+      display: block;
+    }
+  }
+}
+
+.filter-price {
+
+  &__inner {
+
+    padding: 24px 15px;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #C2C2C2;
+
+    &:not(:last-child) {
+      margin-right: 18px;
+    }
+  }
+
+  &__num {
+    max-width: 72px;
+    width: 100%;
+    height: 41px;
+    margin-right: 3px;
+    text-align: center;
+    background-color: #FAEDED;
+    border: transparent;
+    border-radius: 3px;
+
+    &::placeholder {
+      text-align: center;
+      color: $default
+    }
+
+    &:focus::placeholder {
+      color: transparent
     }
   }
 }
