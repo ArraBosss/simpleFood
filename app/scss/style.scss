@@ -15,14 +15,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 58px 0 58px 4px;
+
+    @include mq('phone') {
+      padding: 9px 5px 25px 1px;
+      margin-bottom: 15px;
+    }
   }
 }
 
 .menu {
   display: flex;
   margin: 0 50px 0 auto;
+
+  @include mq('tablet-2') {
+    display: none;
+  }
 
   &__item {
     &:not(:last-child) {
@@ -34,10 +42,15 @@
     font-size: 18px;
     color: $default;
   }
+
 }
 
 .user-nav {
   display: flex;
+
+  @include mq('tablet-2') {
+    margin: 0 6px 0 auto;
+  }
 
   &__item {
     &:not(:last-child) {
@@ -116,10 +129,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mq('tablet-2') {
+      justify-content: space-around;
+    }
+
+    @include mq('tablet') {
+      position: relative;
+      justify-content: flex-start;
+    }
+
   }
 
   &__content {
     max-width: 450px;
+
+    @include mq('tablet-2') {
+      max-width: 345px;
+    }
+
+    @include mq('tablet') {
+      z-index: 2;
+    }
   }
 
   &__title {
@@ -132,7 +163,16 @@
     @include line-clamp(2);
 
     @include mq('desktop') {
+      font-size: 60px;
+    }
+
+    @include mq('tablet-2') {
       font-size: 50px;
+    }
+
+    @include mq('phone') {
+      font-size: 40px;
+      max-width: 260px;
     }
   }
 
@@ -145,10 +185,27 @@
     line-height: 1.5;
     margin-bottom: 20px;
     @include line-clamp(3);
+
+    @include mq('phone') {
+      font-size: 16px;
+    }
   }
 
   &__btn {
     margin-right: 32px;
+
+    @include mq('phone') {
+      margin-right: 25px;
+      padding: 8px 27px;
+      font-size: 14px;
+    }
+  }
+
+  &__more {
+
+    @include mq('phone') {
+      font-size: 16px;
+    }
   }
 
   &__img {
@@ -158,14 +215,41 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    @include mq('desktop') {
+      max-width: 509px;
+      height: 600px;
+    }
+
+    @include mq('tablet-2') {
+      max-width: 360px;
+      height: 424px;
+    }
+
+    @include mq('tablet') {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      opacity: 0.2;
+    }
+
+    @include mq('phone') {
+      max-width: 250px;
+      height: 300px;
+    }
+
   }
 }
 
 .popular {
   text-align: center;
+  padding-top: 66px;
 
   &__title {
     margin-bottom: 60px;
+
+    @include mq('tablet') {
+      margin-bottom: 30px;
+    }
   }
 
   &__menu {
@@ -173,6 +257,26 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 30px;
     margin-bottom: 60px;
+
+    @include mq('desktop') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include mq('tablet-2') {
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 30px;
+    }
+
+    @include mq('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mq('phone') {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 10px;
+      grid-column-gap: 5px;
+
+    }
   }
 }
 
@@ -181,11 +285,27 @@
   flex-wrap: wrap;
   margin-bottom: 25px;
 
+  @include mq('tablet-2') {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  @include mq('tablet') {
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+  }
+
   &__item {
     margin-bottom: 20px;
 
     &:not(:last-child) {
       margin-right: 20px;
+    }
+
+    @include mq('tablet-2') {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
     }
   }
 
@@ -201,15 +321,23 @@
     box-shadow: 0 0 0 1px #ECECEC;
     border-radius: 5px;
 
+    @include mq('phone') {
+      font-size: 14px;
+      padding: 2px 16px;
+    }
+
+
     svg {
       width: 44px;
       height: 44px;
-      margin-right: 10px;
-    }
-
-    svg {
+      margin-right: 5px;
       fill: $title;
       transition: fill 0.5s;
+
+      @include mq('phone') {
+        width: 20px;
+        height: 20px;
+      }
     }
 
     &:hover {
@@ -300,6 +428,10 @@
 .stay-home {
   padding-top: 120px;
 
+  @include mq('phone') {
+    padding-top: 65px;
+  }
+
   &__title {
     margin-bottom: 28px;
     @include line-clamp(2);
@@ -310,6 +442,11 @@
     align-items: center;
     justify-content: space-around;
     padding: 0 10px;
+
+    @include mq('tablet') {
+      position: relative;
+      padding: 0;
+    }
   }
 
   &__img {
@@ -318,10 +455,28 @@
     height: 585px;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include mq('tablet') {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.2;
+    }
+
+    @include mq('phone') {
+      max-width: 348px;
+      height: 462px;
+    }
   }
 
   &__content {
     max-width: 470px;
+
+    @include mq('tablet') {
+      z-index: 2;
+    }
   }
 
   &__text p {
@@ -329,10 +484,22 @@
     line-height: 1.5;
     margin-bottom: 30px;
     @include line-clamp(4);
+
+    @include mq('tablet') {
+      margin-bottom: 32px;
+    }
+
+    @include mq('phone') {
+      font-size: 16px;
+    }
   }
 
   &__list {
     margin-bottom: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
   }
 
   &__info {
@@ -347,20 +514,39 @@
       margin-bottom: 20px;
     }
 
+    @include mq('phone') {
+      padding: 4px 0 4px 46px;
+      font-size: 18px;
+
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+    }
+
     &--clock {
       background-image: url('../images/decor/clock.svg');
       background-position: left center;
+      background-size: 34px 34px;
     }
 
     &--delivery {
       background-image: url('../images/decor/delivery.svg');
       background-position: left center;
+      background-size: 34px 34px;
     }
 
     &--resturent {
       background-image: url('../images/decor/resturent.svg');
       background-position: left center;
+      background-size: 34px 34px;
     }
+  }
+
+  &__btn {
+    @include mq('phone') {
+      font-size: 14px;
+    }
+
   }
 }
 
@@ -368,12 +554,73 @@
   &__title {
     text-align: center;
   }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    @include mq('phone') {
+      display: none;
+    }
+  }
 }
 
-.top-restaurants__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
+
+.top-restaurants__slider {
+  display: none;
+
+  @include mq('phone') {
+    display: block;
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+
+    li {
+      padding-bottom: 3px;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      button {
+        font-size: 0;
+        background-color: #C2C2C2;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        transition: background-color 0.5s, box-shadow 0.5s;
+
+        &:hover {
+          background-color: #FFF2ED;
+          box-shadow: 0 0 0 2px $box-shadow;
+        }
+
+        &:focus {
+          background: #C2C2C2;
+          box-shadow: 0 0 0 2px $accent;
+        }
+
+        &:active {
+          box-shadow: none;
+          background-color: #FFAE94;
+        }
+      }
+
+      &.slick-active {
+
+        button {
+          background-color: $accent;
+
+          &:focus {
+            background-color: #C2C2C2;
+          }
+        }
+      }
+    }
+  }
 }
 
 .restaurants-card {
