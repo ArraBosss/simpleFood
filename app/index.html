@@ -90,81 +90,83 @@
 
         </nav>
 
-        <div class="side-nav">
-          <div class="side-nav__inner">
+        <div class="overlay">
+          <div class="side-nav">
+            <div class="side-nav__inner">
 
-            <a class="logo" href="#">
-              <img class="logo__img" src="images/logo.svg" width="200" height="39" alt="Логотип компании">
-            </a>
+              <a class="logo" href="#">
+                <img class="logo__img" src="images/logo.svg" width="200" height="39" alt="Логотип компании">
+              </a>
 
-            <button class="burger close" type="button" aria-label="Мобильное меню">
-              <span class="burger__line"></span>
-            </button>
+              <button class="burger close" type="button" aria-label="Мобильное меню">
+                <span class="burger__line"></span>
+              </button>
 
+            </div>
+
+            <ul class="menu">
+
+              <li class="menu__item">
+                <a class="menu__link animation" href="#">Главная</a>
+              </li>
+
+              <li class="menu__item">
+                <a class="menu__link animation" href="#">Блюда</a>
+              </li>
+
+              <li class="menu__item">
+                <a class="menu__link animation" href="#">Контакты</a>
+              </li>
+
+            </ul>
+
+            <address class="contacts">
+              <ul class="contacts__list">
+
+                <li class="contacts__item contacts__item--location">
+                  <a class="contacts__link animation" href="#">ул. Смирнова 2/3</a>
+                </li>
+
+                <li class="contacts__item contacts__item--phone">
+                  <a class="contacts__link animation" href="tel:+79068057043">79068057043</a>
+                </li>
+
+                <li class="contacts__item contacts__item--message">
+                  <a class="contacts__link animation" href="mailto:support@sfood.com">support@sfood.com</a>
+                </li>
+              </ul>
+
+              <ul class="networks">
+
+                <li class="networks__social">
+                  <a class="networks__link" href="#">
+                    <span class="sr-only">Мы в фейсбук</span>
+                    <svg class="networks__icon">
+                      <use xlink:href="images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="networks__social">
+                  <a class="networks__link" href="#">
+                    <span class="sr-only">Мы в твиттер</span>
+                    <svg class="networks__icon">
+                      <use xlink:href="images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="networks__social">
+                  <a class="networks__link" href="#">
+                    <span class="sr-only">Мы в инстаграм</span>
+                    <svg class="networks__icon">
+                      <use xlink:href="images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </address>
           </div>
-
-          <ul class="menu">
-
-            <li class="menu__item">
-              <a class="menu__link animation" href="#">Главная</a>
-            </li>
-
-            <li class="menu__item">
-              <a class="menu__link animation" href="#">Блюда</a>
-            </li>
-
-            <li class="menu__item">
-              <a class="menu__link animation" href="#">Контакты</a>
-            </li>
-
-          </ul>
-
-          <address class="contacts">
-            <ul class="contacts__list">
-
-              <li class="contacts__item contacts__item--location">
-                <a class="contacts__link animation" href="#">ул. Смирнова 2/3</a>
-              </li>
-
-              <li class="contacts__item contacts__item--phone">
-                <a class="contacts__link animation" href="tel:+79068057043">79068057043</a>
-              </li>
-
-              <li class="contacts__item contacts__item--message">
-                <a class="contacts__link animation" href="mailto:support@sfood.com">support@sfood.com</a>
-              </li>
-            </ul>
-
-            <ul class="networks">
-
-              <li class="networks__social">
-                <a class="networks__link" href="#">
-                  <span class="sr-only">Мы в фейсбук</span>
-                  <svg class="networks__icon">
-                    <use xlink:href="images/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
-
-              <li class="networks__social">
-                <a class="networks__link" href="#">
-                  <span class="sr-only">Мы в твиттер</span>
-                  <svg class="networks__icon">
-                    <use xlink:href="images/sprite.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-              </li>
-
-              <li class="networks__social">
-                <a class="networks__link" href="#">
-                  <span class="sr-only">Мы в инстаграм</span>
-                  <svg class="networks__icon">
-                    <use xlink:href="images/sprite.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </address>
         </div>
       </div>
     </header>
@@ -453,7 +455,7 @@
         </div>
       </section>
 
-      <!-- <section class="top-restaurants section">
+      <section class="top-restaurants section">
 
         <div class="container">
           <h2 class="top-restaurants__title title">
@@ -849,32 +851,6 @@
                 </blockquote>
               </div>
             </li>
-
-            <li class="slider-reviews__item">
-              <div class="slider-reviews__content">
-
-                <img class="slider-reviews__img" src="images/slider/client_dariya.jpg" width="300" height="300"
-                  alt="Фото клиента">
-
-                <blockquote class="slider-reviews__blockquote">
-                  <div class="slider-reviews__text">
-                    <p>
-                      SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт
-                      и
-                      приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит
-                      скидки
-                      на доставку - однозначно рекомендую!
-                    </p>
-                  </div>
-                  <cite class="slider-reviews__client">
-                    Дарья
-                  </cite>
-                  <span class="slider-reviews__rank">
-                    Ценитель вкусной еды
-                  </span>
-                </blockquote>
-              </div>
-            </li>
           </ul>
 
           <div class="slider-reviews__nav">
@@ -944,111 +920,113 @@
             </form>
           </div>
 
-          <ul class="footer__list">
+          <div class="footer__wrapper">
 
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Как это работает</a>
-            </li>
+            <ul class="footer__list">
 
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Продукты</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Блюда</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Меню</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">О нас</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Новости</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Партнеры</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">ЧаВо</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Скачать приложение</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Блог</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Что нового?</a>
-            </li>
-
-            <li class="footer__item">
-              <a class="footer__link animation" href="#">Карта сайта</a>
-            </li>
-          </ul>
-
-          <address class="contacts">
-            <ul class="contacts__list">
-
-              <li class="contacts__item contacts__item--location">
-                <a class="contacts__link animation" href="#">ул. Смирнова 2/3</a>
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Как это работает</a>
               </li>
 
-              <li class="contacts__item contacts__item--phone">
-                <a class="contacts__link animation" href="tel:+79068057043">79068057043</a>
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Продукты</a>
               </li>
 
-              <li class="contacts__item contacts__item--message">
-                <a class="contacts__link animation" href="mailto:support@sfood.com">support@sfood.com</a>
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Блюда</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Меню</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">О нас</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Новости</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Партнеры</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">ЧаВо</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Скачать приложение</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Блог</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Что нового?</a>
+              </li>
+
+              <li class="footer__item">
+                <a class="footer__link animation" href="#">Карта сайта</a>
               </li>
             </ul>
 
-            <ul class="networks">
+            <address class="contacts">
+              <ul class="contacts__list">
 
-              <li class="networks__social">
-                <a class="networks__link" href="#">
-                  <span class="sr-only">Мы в фейсбук</span>
-                  <svg class="networks__icon">
-                    <use xlink:href="images/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
+                <li class="contacts__item contacts__item--location">
+                  <a class="contacts__link animation" href="#">ул. Смирнова 2/3</a>
+                </li>
 
-              <li class="networks__social">
-                <a class="networks__link" href="#">
-                  <span class="sr-only">Мы в твиттер</span>
-                  <svg class="networks__icon">
-                    <use xlink:href="images/sprite.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-              </li>
+                <li class="contacts__item contacts__item--phone">
+                  <a class="contacts__link animation" href="tel:+79068057043">79068057043</a>
+                </li>
 
-              <li class="networks__social">
-                <a class="networks__link" href="#">
-                  <span class="sr-only">Мы в инстаграм</span>
-                  <svg class="networks__icon">
-                    <use xlink:href="images/sprite.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </address>
+                <li class="contacts__item contacts__item--message">
+                  <a class="contacts__link animation" href="mailto:support@sfood.com">support@sfood.com</a>
+                </li>
+              </ul>
 
+              <ul class="networks">
+
+                <li class="networks__social">
+                  <a class="networks__link" href="#">
+                    <span class="sr-only">Мы в фейсбук</span>
+                    <svg class="networks__icon">
+                      <use xlink:href="images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="networks__social">
+                  <a class="networks__link" href="#">
+                    <span class="sr-only">Мы в твиттер</span>
+                    <svg class="networks__icon">
+                      <use xlink:href="images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="networks__social">
+                  <a class="networks__link" href="#">
+                    <span class="sr-only">Мы в инстаграм</span>
+                    <svg class="networks__icon">
+                      <use xlink:href="images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </address>
+          </div>
         </div>
       </div>
 
       <div class="footer__bottom">
         <span class="footer__text">© 2021 Simple Food</span>
       </div>
-    </footer> -->
+    </footer>
 
     <script src="js/main.min.js"></script>
   </div>
