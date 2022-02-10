@@ -15,6 +15,18 @@ $(function () {
 
   });
 
+  $('.top-restaurants__slider').slick({
+    dots: true,
+    arrows: false,
+
+
+  });
+
+  $('.burger').on('click', function () {
+    $('body').toggleClass('lock');
+    $('.burger, .burger__line, .side-nav').toggleClass('active');
+  });
+
 });
 
 

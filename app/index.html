@@ -91,20 +91,17 @@
         </nav>
 
         <div class="side-nav">
-
           <div class="side-nav__inner">
 
             <a class="logo" href="#">
               <img class="logo__img" src="images/logo.svg" width="200" height="39" alt="Логотип компании">
             </a>
 
-            <button class="burger active" type="button" aria-label="Мобильное меню">
-              <span class="burger__line "></span>
+            <button class="burger close" type="button" aria-label="Мобильное меню">
+              <span class="burger__line"></span>
             </button>
-            
+
           </div>
-
-
 
           <ul class="menu">
 
@@ -119,6 +116,7 @@
             <li class="menu__item">
               <a class="menu__link animation" href="#">Контакты</a>
             </li>
+
           </ul>
 
           <address class="contacts">
@@ -227,7 +225,8 @@
             </li>
 
             <li class="filter-product__item">
-              <button class="filter-product__btn button" type="button" data-filter=".category-sandwich">
+              <button class="filter-product__btn filter-product__btn--burger button" type="button"
+                data-filter=".category-sandwich">
                 <svg>
                   <use xlink:href="images/sprite.svg#icon-sandwich"></use>
                 </svg>
@@ -250,7 +249,6 @@
                 Cеты</button>
             </li>
           </ul>
-
 
           <ul class="popular__menu">
             <li class="popular__item mix category-burgers">
@@ -412,9 +410,7 @@
                 <button class="product-card__btn button" type="button">В корзину</button>
               </article>
             </li>
-
           </ul>
-
 
           <button class="popular-products__btn btn-more animation" type="button">Показать еще</button>
         </div>
@@ -457,7 +453,7 @@
         </div>
       </section>
 
-      <section class="top-restaurants section">
+      <!-- <section class="top-restaurants section">
 
         <div class="container">
           <h2 class="top-restaurants__title title">
@@ -599,6 +595,146 @@
               </article>
             </li>
           </ul>
+
+          <ul class="top-restaurants__slider">
+
+            <li class="top-restaurants__item">
+              <article class="restaurants-card">
+                <img class="restaurants-card__img" src="images/catalog/blaze_pizza.jpg" width="370" height="300"
+                  alt="Фото Blaze Pizza">
+
+                <h3 class="restaurants-card__title">
+                  Blaze Pizza
+                </h3>
+
+                <div class="restaurants-card__wrapper">
+
+                  <time class="restaurants-card__period" datetime="11:00 - 22:00">11:00 - 22:00</time>
+
+                  <a class="restaurants-card__btn button" href="#">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="top-restaurants__item">
+              <article class="restaurants-card">
+                <img class="restaurants-card__img" src="images/catalog/pizza_runcho.jpg" width="370" height="300"
+                  alt="Фото Blaze Pizza">
+
+                <h3 class="restaurants-card__title">
+                  Pizza Runcho
+                </h3>
+
+                <div class="restaurants-card__wrapper">
+
+                  <time class="restaurants-card__period" datetime="12:00 - 21:00">12:00 - 21:00</time>
+
+                  <a class="restaurants-card__btn button" href="#">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="top-restaurants__item">
+              <article class="restaurants-card">
+                <img class="restaurants-card__img" src="images/catalog/pizza_hut.jpg" width="370" height="300"
+                  alt="Фото Blaze Pizza">
+
+                <h3 class="restaurants-card__title">
+                  Pizza Hut
+                </h3>
+
+                <div class="restaurants-card__wrapper">
+
+                  <time class="restaurants-card__period" datetime="11:00 - 22:00">11:00 - 22:00</time>
+
+
+                  <a class="restaurants-card__btn button" href="#">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="top-restaurants__item">
+              <article class="restaurants-card">
+                <img class="restaurants-card__img" src="images/catalog/mc_donalds.jpg" width="370" height="300"
+                  alt="Фото Blaze Pizza">
+
+                <h3 class="restaurants-card__title">
+                  McDonald`s
+                </h3>
+
+                <div class="restaurants-card__wrapper">
+
+                  <time class="restaurants-card__period" datetime="06:00 - 23:00">06:00 - 23:00</time>
+
+                  <a class="restaurants-card__btn button" href="#">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="top-restaurants__item">
+              <article class="restaurants-card">
+                <img class="restaurants-card__img" src="images/catalog/kfc.jpg" width="370" height="300"
+                  alt="Фото Blaze Pizza">
+
+                <h3 class="restaurants-card__title">
+                  KFC
+                </h3>
+
+                <div class="restaurants-card__wrapper">
+
+                  <time class="restaurants-card__period" datetime="06:00 - 23:00">06:00 - 23:00</time>
+
+                  <a class="restaurants-card__btn button" href="#">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="top-restaurants__item">
+              <article class="restaurants-card">
+                <img class="restaurants-card__img" src="images/catalog/star_burgers.jpg" width="370" height="300"
+                  alt="Фото Blaze Pizza">
+
+                <h3 class="restaurants-card__title">
+                  Star Burgers
+                </h3>
+
+                <div class="restaurants-card__wrapper">
+
+                  <time class="restaurants-card__period" datetime="09:00 - 21:00">09:00 - 21:00</time>
+
+                  <a class="restaurants-card__btn button" href="#">
+                    <svg>
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+
+          </ul>
+
+
         </div>
       </section>
 
@@ -739,13 +875,11 @@
                 </blockquote>
               </div>
             </li>
-
           </ul>
 
           <div class="slider-reviews__nav">
             <div class="slider-reviews__dots"></div>
           </div>
-
         </div>
       </section>
 
@@ -914,7 +1048,7 @@
       <div class="footer__bottom">
         <span class="footer__text">© 2021 Simple Food</span>
       </div>
-    </footer>
+    </footer> -->
 
     <script src="js/main.min.js"></script>
   </div>
