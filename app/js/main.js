@@ -28,16 +28,11 @@ $(function () {
     arrows: false,
   });
 
-  $('.burger').on('click', function () {
+  $('.burger, close').on('click', function () {
     $('body').toggleClass('lock');
-    $('.burger, .burger__line, .overlay').toggleClass('active');
+    $('.burger, .burger__line, .overlay, .side-nav').toggleClass('active');
   });
 
 });
-
-
-
-
-
 
 var mixer = mixitup('.popular__menu');
