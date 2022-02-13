@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Food - доставка еды | Главная</title>
+  <title>Simple Food | Каталог продуктов</title>
   <link type="image/x-icon" rel="shortcut icon" href="images/favicons/favicon.ico">
   <link type="image/png" sizes="16x16" rel="icon" href="images/favicons/favicon-16x16.png">
   <link type="image/png" sizes="32x32" rel="icon" href="images/favicons/favicon-32x32.png">
@@ -51,7 +51,7 @@
           <ul class="menu">
 
             <li class="menu__item">
-              <a class="menu__link animation" href="#">Главная</a>
+              <a class="menu__link animation" href="index.html">Главная</a>
             </li>
 
             <li class="menu__item">
@@ -173,21 +173,21 @@
     </header>
 
     <main class="main">
-      <h1 class="sr-only">Simple Food - каталог товаров</h1>
+      <h1 class="sr-only">Каталог товаров</h1>
 
       <section class="catalog">
         <div class="catalog-nav">
           <div class="container">
             <ul class="catalog-nav__list">
               <li class="catalog-nav__item">
-                <a class="catalog-nav__link animation" href="#">
+                <a class="catalog-nav__link animation" href="index.html">
                   Главная
                 </a>
               </li>
               <li class="catalog-nav__item">
-                <a class="catalog-nav__link animation" href="#">
+                <span class="catalog-nav__link" href="#">
                   Каталог товаров
-                </a>
+                </span>
               </li>
             </ul>
           </div>
@@ -198,6 +198,26 @@
             <h2 class="catalog__title title">
               Каталог продуктов
             </h2>
+            <form class="catalog__form" action="#">
+              <ul class="catalog__sort">
+
+                <li class="catalog__sort-item">
+                  <select class="catalog__sort-filter animation">
+                    <option value="">По названию</option>
+                    <option value="">По популярности</option>
+                    <option value="">По рейтингу</option>
+                  </select>
+                </li>
+
+                <li class="catalog__sort-item">
+                  <select class="catalog__sort-filter animation">
+                    <option value="">По 12</option>
+                    <option value="">По 9</option>
+                    <option value="">По 6</option>
+                  </select>
+                </li>
+              </ul>
+            </form>
           </div>
 
           <div class="catalog__inner">
@@ -265,47 +285,47 @@
                 <h3 class="filter-aside__title title">
                   Предложения
                 </h3>
+                <form class="filter-aside__form" action="#">
+                  <ul class="filter-aside__list">
 
-                <ul class="filter-aside__list">
+                    <li class="filter-aside__item filter-aside__item--checkbox">
+                      <label class="filter-aside__label" for="discount"><input class="filter-aside__сheckbox"
+                          type="checkbox" id="discount" name="discount"><span class="filter-aside__style"></span>Со
+                        скидкой</label>
+                    </li>
 
-                  <li class="filter-aside__item filter-aside__item--checkbox">
-                    <label class="filter-aside__label" for="discount"><input class="filter-aside__сheckbox"
-                        type="checkbox" id="discount" name="discount"><span class="filter-aside__style"></span>Со
-                      скидкой</label>
-                  </li>
+                    <li class="filter-aside__item filter-aside__item--checkbox">
+                      <label class="filter-aside__label" for="novelty"><input class="filter-aside__сheckbox" checked
+                          type="checkbox" id="novelty" name="novelty"><span
+                          class="filter-aside__style"></span>Новинка</label>
+                    </li>
 
-                  <li class="filter-aside__item filter-aside__item--checkbox">
-                    <label class="filter-aside__label" for="novelty"><input class="filter-aside__сheckbox"
-                        type="checkbox" id="novelty" name="novelty"><span
-                        class="filter-aside__style"></span>Новинка</label>
-                  </li>
+                    <li class="filter-aside__item filter-aside__item--checkbox">
+                      <label class="filter-aside__label" for="hit"><input class="filter-aside__сheckbox" type="checkbox"
+                          id="hit" name="hit"><span class="filter-aside__style"></span>Хит</label>
+                    </li>
 
-                  <li class="filter-aside__item filter-aside__item--checkbox">
-                    <label class="filter-aside__label" for="hit"><input class="filter-aside__сheckbox" type="checkbox"
-                        id="hit" name="hit"><span class="filter-aside__style"></span>Хит</label>
-                  </li>
-
-                </ul>
+                  </ul>
+                </form>
               </div>
+
               <div class="filter-aside__criteria filter-price">
 
                 <h3 class="filter-aside__title title">
                   Цена
                 </h3>
 
-                <div class="filter-price__inner">
-                  <label class="filter-price__label" for="min-price">
+                <ul class="filter-price__inner">
+                  <li class="filter-price__label" for="min-price">
                     от
-                    <input class="filter-price__num" type="text" id="min-price" name="минимальная-цена"
-                      placeholder="100" formcontrolname="min" maxlength="20">₽
-                  </label>
+                    <span class="filter-price__from"></span> ₽
+                  </li>
 
-                  <label class="filter-price__label">
+                  <li class="filter-price__label">
                     до
-                    <input class="filter-price__num" type="text" id="max-price" name="максимальная-цена"
-                      placeholder="1000" formcontrolname="max" maxlength="20">₽
-                  </label>
-                </div>
+                    <span class="filter-price__to"></span> ₽
+                  </li>
+                </ul>
 
                 <form class="filter-price__form" action="#">
                   <input class="filter-price__input" type="text" data-min="0" data-max="1200" data-from="100"
@@ -382,22 +402,6 @@
 
               <li class="popular__item mix category-burgers">
                 <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/chickenburger.png" width="140" height="140"
-                    alt="Фото чикен бургера">
-
-                  <h3 class="product-card__title">
-                    Чикен бургер
-                  </h3>
-                  <span class="product-card__price">180
-                    <span class="product-card__currency">руб.</span>
-                  </span>
-
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
-
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
                   <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
                     alt="Фото чизбургера с листьями салата">
 
@@ -413,7 +417,7 @@
               </li>
 
               <li class="popular__item mix category-burgers">
-                <article class="product-card">
+                <article class="product-card ">
                   <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
                     alt="Фото бифбургер">
 
@@ -444,7 +448,7 @@
                 </article>
               </li>
 
-              <li class="popular__item mix category-pizza">
+              <li class="popular__item mix category-burgers">
                 <article class="product-card">
                   <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
                     alt="Фото черного гамбургера">
@@ -460,21 +464,81 @@
                 </article>
               </li>
 
-              <li class="popular__item mix category-pizza">
+              <li class="popular__item mix category-burgers">
                 <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/chickenburger.png" width="140" height="140"
-                    alt="Фото чикен бургера">
+                  <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
+                    alt="Фото чизбургера с листьями салата">
 
                   <h3 class="product-card__title">
-                    Чикен бургер
+                    Чизбургер с листьями салата
                   </h3>
-                  <span class="product-card__price">180
+                  <span class="product-card__price">160
                     <span class="product-card__currency">руб.</span>
                   </span>
 
                   <button class="product-card__btn button" type="button">В корзину</button>
                 </article>
               </li>
+
+              <li class="popular__item mix category-burgers">
+                <article class="product-card ">
+                  <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
+                    alt="Фото бифбургер">
+
+                  <h3 class="product-card__title">
+                    Бифбургер
+                  </h3>
+                  <span class="product-card__price">190
+                    <span class="product-card__currency">руб.</span>
+                  </span>
+
+                  <button class="product-card__btn button" type="button">В корзину</button>
+                </article>
+              </li>
+
+              <li class="popular__item mix category-burgers">
+                <article class="product-card">
+                  <img class="product-card__img" src="images/catalog/cheeseking.png" width="140" height="140"
+                    alt="Фото королевского чизбургера">
+
+                  <h3 class="product-card__title">
+                    Королевский чизбургер
+                  </h3>
+                  <span class="product-card__price">260
+                    <span class="product-card__currency">руб.</span>
+                  </span>
+
+                  <button class="product-card__btn button" type="button">В корзину</button>
+                </article>
+              </li>
+
+              <li class="popular__item mix category-burgers">
+                <article class="product-card">
+                  <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
+                    alt="Фото черного гамбургера">
+
+                  <h3 class="product-card__title">
+                    Черный гамбургер
+                  </h3>
+                  <span class="product-card__price">199
+                    <span class="product-card__currency">руб.</span>
+                  </span>
+
+                  <button class="product-card__btn button" type="button">В корзину</button>
+                </article>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
             </ul>
 
           </div>

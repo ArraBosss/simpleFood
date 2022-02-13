@@ -2,6 +2,14 @@ $(function () {
 
   $('.filter-price__input').ionRangeSlider({
     type: "double",
+    onStart: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    },
+    onChange: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+  },
   })
 
   $('.slider-reviews__list').slick({
@@ -32,6 +40,8 @@ $(function () {
     $('body').toggleClass('lock');
     $('.burger, .burger__line, .overlay, .side-nav').toggleClass('active');
   });
+
+  $('.catalog__sort-filter').styler();
 
 });
 
