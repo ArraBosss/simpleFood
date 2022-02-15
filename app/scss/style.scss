@@ -1315,10 +1315,20 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
+
+    @include mq('tablet-2') {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
     margin-bottom: 0;
+
+    @include mq('tablet-2') {
+      margin-bottom: 20px;
+    }
   }
 
   &__sort {
@@ -1333,6 +1343,10 @@
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 12px;
       margin-bottom: 57px;
+
+      // @include mq('tablet-2') {
+      //   grid-template-columns: repeat(2, 1fr);
+      // }
     }
   }
 }
@@ -1389,9 +1403,41 @@
 }
 
 .filter-aside {
-  max-width: 271px;
-  width: 100%;
   margin-right: 30px;
+  transition: transform 0.7s;
+
+  &__close {
+    margin-left: auto;
+    
+    svg{
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @include mq('tablet-2') {
+    position: absolute;
+    margin:0 0 0 -15px;
+    padding-left: 15px;
+
+    background-color: red;
+    transform: translateX(-200%);
+    overflow-y: scroll;
+
+    &.active {
+      transform: translateX(0);
+      height: 100vh;
+    }
+
+    &__criteria {
+      max-width: 271px;
+      width: 100%;
+    }
+
+
+
+  }
+
 
   &__criteria {
     padding: 15px 15px 25px;
@@ -1551,8 +1597,14 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
 
+    @include mq('phone') {
+      display: none;
+    }
+
     .restaurants-card__title {
       margin-bottom: 14px;
     }
   }
+
+  
 }
