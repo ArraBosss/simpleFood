@@ -202,7 +202,7 @@
               <ul class="catalog__sort">
 
                 <li class="catalog__sort-item">
-                  <select class="catalog__sort-filter animation">
+                  <select class="catalog__sort-filter">
                     <option value="">По названию</option>
                     <option value="">По популярности</option>
                     <option value="">По рейтингу</option>
@@ -210,10 +210,10 @@
                 </li>
 
                 <li class="catalog__sort-item">
-                  <select class="catalog__sort-filter animation">
-                    <option value="">По 12</option>
-                    <option value="">По 9</option>
-                    <option value="">По 6</option>
+                  <select class="catalog__sort-filter">
+                    <option value="">по 12</option>
+                    <option value="">по 9</option>
+                    <option value="">по 6</option>
                   </select>
                 </li>
               </ul>
@@ -335,218 +335,237 @@
               </div>
             </aside>
 
-            <ul class="popular__menu">
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
-                    alt="Фото чизбургера с листьями салата">
+            <div class="catalog__wrapper">
+              <ul class="popular__menu">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
+                      alt="Фото чизбургера с листьями салата">
 
-                  <h3 class="product-card__title">
-                    Чизбургер с листьями салата
-                  </h3>
-                  <span class="product-card__price">160
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Чизбургер с листьями салата
+                    </h3>
+                    <span class="product-card__price">160
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card ">
-                  <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
-                    alt="Фото бифбургер">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card ">
+                    <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
+                      alt="Фото бифбургер">
 
-                  <h3 class="product-card__title">
-                    Бифбургер
-                  </h3>
-                  <span class="product-card__price">190
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Бифбургер
+                    </h3>
+                    <span class="product-card__price">190
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/cheeseking.png" width="140" height="140"
-                    alt="Фото королевского чизбургера">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/cheeseking.png" width="140" height="140"
+                      alt="Фото королевского чизбургера">
 
-                  <h3 class="product-card__title">
-                    Королевский чизбургер
-                  </h3>
-                  <span class="product-card__price">260
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Королевский чизбургер
+                    </h3>
+                    <span class="product-card__price">260
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
-                    alt="Фото черного гамбургера">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
+                      alt="Фото черного гамбургера">
 
-                  <h3 class="product-card__title">
-                    Черный гамбургер
-                  </h3>
-                  <span class="product-card__price">199
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Черный гамбургер
+                    </h3>
+                    <span class="product-card__price">199
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
-                    alt="Фото чизбургера с листьями салата">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
+                      alt="Фото чизбургера с листьями салата">
 
-                  <h3 class="product-card__title">
-                    Чизбургер с листьями салата
-                  </h3>
-                  <span class="product-card__price">160
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Чизбургер с листьями салата
+                    </h3>
+                    <span class="product-card__price">160
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card ">
-                  <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
-                    alt="Фото бифбургер">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card ">
+                    <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
+                      alt="Фото бифбургер">
 
-                  <h3 class="product-card__title">
-                    Бифбургер
-                  </h3>
-                  <span class="product-card__price">190
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Бифбургер
+                    </h3>
+                    <span class="product-card__price">190
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/cheeseking.png" width="140" height="140"
-                    alt="Фото королевского чизбургера">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/cheeseking.png" width="140" height="140"
+                      alt="Фото королевского чизбургера">
 
-                  <h3 class="product-card__title">
-                    Королевский чизбургер
-                  </h3>
-                  <span class="product-card__price">260
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Королевский чизбургер
+                    </h3>
+                    <span class="product-card__price">260
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
-                    alt="Фото черного гамбургера">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
+                      alt="Фото черного гамбургера">
 
-                  <h3 class="product-card__title">
-                    Черный гамбургер
-                  </h3>
-                  <span class="product-card__price">199
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Черный гамбургер
+                    </h3>
+                    <span class="product-card__price">199
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
-                    alt="Фото чизбургера с листьями салата">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/chessburger.png" width="140" height="140"
+                      alt="Фото чизбургера с листьями салата">
 
-                  <h3 class="product-card__title">
-                    Чизбургер с листьями салата
-                  </h3>
-                  <span class="product-card__price">160
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Чизбургер с листьями салата
+                    </h3>
+                    <span class="product-card__price">160
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card ">
-                  <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
-                    alt="Фото бифбургер">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card ">
+                    <img class="product-card__img" src="images/catalog/bifburger.png" width="140" height="140"
+                      alt="Фото бифбургер">
 
-                  <h3 class="product-card__title">
-                    Бифбургер
-                  </h3>
-                  <span class="product-card__price">190
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Бифбургер
+                    </h3>
+                    <span class="product-card__price">190
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/cheeseking.png" width="140" height="140"
-                    alt="Фото королевского чизбургера">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/cheeseking.png" width="140" height="140"
+                      alt="Фото королевского чизбургера">
 
-                  <h3 class="product-card__title">
-                    Королевский чизбургер
-                  </h3>
-                  <span class="product-card__price">260
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Королевский чизбургер
+                    </h3>
+                    <span class="product-card__price">260
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-              <li class="popular__item mix category-burgers">
-                <article class="product-card">
-                  <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
-                    alt="Фото черного гамбургера">
+                <li class="popular__item mix category-burgers">
+                  <article class="product-card">
+                    <img class="product-card__img" src="images/catalog/blackgumburg.png" width="140" height="140"
+                      alt="Фото черного гамбургера">
 
-                  <h3 class="product-card__title">
-                    Черный гамбургер
-                  </h3>
-                  <span class="product-card__price">199
-                    <span class="product-card__currency">руб.</span>
-                  </span>
+                    <h3 class="product-card__title">
+                      Черный гамбургер
+                    </h3>
+                    <span class="product-card__price">199
+                      <span class="product-card__currency">руб.</span>
+                    </span>
 
-                  <button class="product-card__btn button" type="button">В корзину</button>
-                </article>
-              </li>
+                    <button class="product-card__btn button" type="button">В корзину</button>
+                  </article>
+                </li>
 
-
-
-
-
-
-
-
-
-
-
-
-            </ul>
-
+              </ul>
+              <div class="pagination">
+                <a class="pagination__arrows pagination__arrows--prev" href="#">
+                  <span class="sr-only">Перейти на предыдущую страницу</span>
+                  <svg>
+                    <use xlink:href="images/sprite.svg#icon-chevron"></use>
+                  </svg>
+                </a>
+                <ul class="pagination__list">
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">1</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">2</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">...</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">9</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">10</a>
+                  </li>
+                </ul>
+                <a class="pagination__arrows pagination__arrows--next" href="#">
+                  <span class="sr-only">Перейти на следующую страницу</span>
+                  <svg>
+                    <use xlink:href="images/sprite.svg#icon-chevron"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
-
-
-
 
       <section class="apps section">
         <div class="container">
@@ -573,7 +592,7 @@
 
                 <li class="apps__item">
                   <a class="apps__link" href="#" target="_blank">
-                    <img class="apps__icon" src="images/decor/google_play.svg" width="129" height="40"
+                    <img class="apps__icon" src="images/decor/google_play.svg" width="135" height="40"
                       alt="Скачать из Google Play">
                   </a>
                 </li>
@@ -636,6 +655,7 @@
 
           </ul>
         </div>
+
       </section>
 
     </main>
