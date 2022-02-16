@@ -93,7 +93,7 @@ body {
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    box-shadow: 0 0 0 2px $box-shadow;
     border-radius: 5px;
   }
 
@@ -116,13 +116,13 @@ body {
   &:hover {
     color: $accent;
     background-color: transparent;
-    box-shadow: 0 5px 12px rgba(255, 104, 56, 0.2), 0 0 0 2px rgba(255, 104, 56, 0.7);
+    box-shadow: 0 5px 12px rgba(255, 104, 56, 0.2), 0 0 0 2px $box-shadow;
   }
 
   &:focus {
     color: $accent;
     background-color: rgba(255, 122, 80, 0.1);
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    box-shadow: 0 0 0 2px $box-shadow;
     border-radius: 5px;
   }
 
@@ -290,10 +290,24 @@ body {
 
   &.active {
     position: absolute;
+    z-index: 11;
     width: 100%;
     background-color: rgba(10, 10, 10, 0.5);
   }
+}
 
+.overlay-aside {
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: transform 0.7s, background-color 0.7s;
+
+  &.active {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.5);
+  }
 }
 
 .pagination {
@@ -311,7 +325,6 @@ body {
     font-size: 18px;
     line-height: 1;
     color: $title;
-
   }
 
   &__arrows {

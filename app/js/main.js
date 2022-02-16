@@ -35,15 +35,44 @@ $(function () {
     arrows: false,
   });
 
-  $('.burger, close').on('click', function () {
-    $('body').toggleClass('lock');
-    $('.burger, .burger__line, .overlay, .side-nav').toggleClass('active');
-  });
+  // $('.filter-btn, .filter-aside__close').on('click', function () {
+  //   $('body').toggleClass('lock');
+  //   $('.filter-aside, .overlay-aside').toggleClass('active');
+  // });
 
   $('.filter-btn, .filter-aside__close').on('click', function () {
-    $('body').toggleClass('lock');
-    $('.filter-aside').toggleClass('active');
+    toggleFilter();
   });
+
+  $('.overlay-aside').on('click', function (event) {
+    if (this == event.target) {
+    toggleFilter();
+    }
+  });
+
+  function toggleFilter() {
+    $('body').toggleClass('lock');
+    $('.filter-aside, .overlay-aside').toggleClass('active');
+  }
+
+
+  
+  $('.burger, .close').on('click', function () {
+    toggleSideNav();
+  });
+
+  $('.overlay').on('click', function (event) {
+    if (this == event.target) {
+      toggleSideNav();
+    }
+  });
+
+  function toggleSideNav() {
+    $('body').toggleClass('lock');
+    $('.burger, .burger__line, .overlay, .side-nav').toggleClass('active');
+  }
+
+
 
 
 
