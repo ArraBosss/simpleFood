@@ -364,6 +364,16 @@ body {
       }
     }
   }
+
+  &__selected {
+    border-color: $title;
+  }
+
+  &__hidden {
+    @include mq('phone') {
+      display: none;
+    }
+  }
 }
 
 .filter-btn {
@@ -378,8 +388,8 @@ body {
 
   svg {
     width: 32px;
-    height: 30px;
-    
+    height: 36px;
+
     fill: $accent;
   }
 }

@@ -30,7 +30,7 @@ $(function () {
     ]
   });
 
-  $('.top-restaurants__slider').slick({
+  $('.top-restaurants__slider, .stoke__slider').slick({
     dots: true,
     arrows: false,
   });
@@ -40,8 +40,8 @@ $(function () {
     $('.burger, .burger__line, .overlay, .side-nav').toggleClass('active');
   });
 
-  $('.filter-btn').on('click', function () {
-    // $('body').toggleClass('lock');
+  $('.filter-btn, .filter-aside__close').on('click', function () {
+    $('body').toggleClass('lock');
     $('.filter-aside').toggleClass('active');
   });
 

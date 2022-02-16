@@ -53,6 +53,10 @@
     color: $default;
   }
 
+  &__selected {
+    color: $accent;
+  }
+
 }
 
 .user-nav {
@@ -1333,10 +1337,15 @@
 
   &__sort {
     display: flex;
+    align-items: center;
   }
 
   &__inner {
     display: flex;
+
+    @include mq('tablet-2') {
+      justify-content: center;
+    }
 
     .popular__menu {
       text-align: center;
@@ -1344,9 +1353,11 @@
       grid-gap: 12px;
       margin-bottom: 57px;
 
-      // @include mq('tablet-2') {
-      //   grid-template-columns: repeat(2, 1fr);
-      // }
+      @include mq('phone') {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 10px;
+        grid-column-gap: 5px;
+      }
     }
   }
 }
@@ -1406,38 +1417,46 @@
   margin-right: 30px;
   transition: transform 0.7s;
 
-  &__close {
-    margin-left: auto;
-    
-    svg{
-      width: 18px;
-      height: 18px;
-    }
-  }
-
   @include mq('tablet-2') {
     position: absolute;
-    margin:0 0 0 -15px;
-    padding-left: 15px;
-
-    background-color: red;
+    top: 0;
+    z-index: 11;
+    margin-left: -15px;
+    padding: 80px 50px 5px 15px;
+    background-color: $white;
     transform: translateX(-200%);
     overflow-y: scroll;
-
-    &.active {
-      transform: translateX(0);
-      height: 100vh;
-    }
-
-    &__criteria {
-      max-width: 271px;
-      width: 100%;
-    }
-
-
-
   }
 
+  &__close {
+    display: none;
+
+    @include mq('tablet-2') {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 11px;
+      background-color: #FAEDED;
+      border-radius: 3px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-bottom: -5px;
+    }
+  }
+
+  &.active {
+    transform: translateX(0);
+    height: 100vh;
+  }
+
+  &__criteria {
+    max-width: 271px;
+    width: 100%;
+  }
 
   &__criteria {
     padding: 15px 15px 25px;
@@ -1589,7 +1608,8 @@
 .stoke {
 
   &__title {
-    margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 39px;
   }
 
   &__list {
@@ -1597,14 +1617,75 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
 
-    @include mq('phone') {
+    @include mq('tablet') {
       display: none;
-    }
-
-    .restaurants-card__title {
-      margin-bottom: 14px;
     }
   }
 
-  
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__slider {
+    display: none;
+
+    @include mq('tablet') {
+      display: block;
+    }
+
+    .slick-list {
+      margin-bottom: 22px;
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+
+      li {
+        padding-bottom: 3px;
+
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+
+        button {
+          font-size: 0;
+          background-color: $gray;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          transition: background-color 0.5s, box-shadow 0.5s;
+
+          &:hover {
+            background-color: #FFF2ED;
+            box-shadow: 0 0 0 2px $box-shadow;
+          }
+
+          &:focus {
+            background: $gray;
+            box-shadow: 0 0 0 2px $accent;
+          }
+
+          &:active {
+            box-shadow: none;
+            background-color: #FFAE94;
+          }
+        }
+
+        &.slick-active {
+
+          button {
+            background-color: $accent;
+
+            &:focus {
+              background-color: $gray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
 }
