@@ -678,8 +678,13 @@
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.5s;
 
+  @include mq('tablet-2') {
+    max-width: 100%;
+  }
+
   img {
     object-fit: cover;
+    width: 100%;
   }
 
   &:hover {
@@ -1643,6 +1648,11 @@
     grid-gap: 30px;
 
     @include mq('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+    }
+
+    @include mq('phone') {
       display: none;
     }
   }
@@ -1657,7 +1667,7 @@
   &__slider {
     display: none;
 
-    @include mq('tablet') {
+    @include mq('phone') {
       display: block;
     }
 
