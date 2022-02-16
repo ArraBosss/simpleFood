@@ -53,6 +53,10 @@
     color: $default;
   }
 
+  &__selected {
+    color: $accent;
+  }
+
 }
 
 .user-nav {
@@ -248,7 +252,7 @@
 
 .popular {
   text-align: center;
-  padding-top: 66px;
+  padding-top: 120px;
 
   &__title {
     margin-bottom: 60px;
@@ -304,7 +308,7 @@
   @include mq('tablet') {
     flex-wrap: nowrap;
     margin-bottom: 8px;
-    padding-top: 2px;
+    padding: 2px 0 0 2px;
   }
 
   &__item {
@@ -325,7 +329,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 13px 32px;
+    padding: 13px 35px;
     font-size: 20px;
     line-height: 1.3;
     color: $title;
@@ -527,6 +531,7 @@
     line-height: 1.5;
     background-repeat: no-repeat;
     background-size: 34px;
+    background-position: left center;
     @include line-clamp(2);
 
     &:not(:last-child) {
@@ -544,20 +549,14 @@
 
     &--clock {
       background-image: url('../images/decor/clock.svg');
-      background-position: left center;
-      background-size: 34px 34px;
     }
 
     &--delivery {
       background-image: url('../images/decor/delivery.svg');
-      background-position: left center;
-      background-size: 34px 34px;
     }
 
     &--resturent {
       background-image: url('../images/decor/resturent.svg');
-      background-position: left center;
-      background-size: 34px 34px;
     }
   }
 
@@ -999,7 +998,7 @@
   }
 
   &__text p {
-    margin-bottom: 33px;
+    margin-bottom: 30px;
     font-size: 20px;
     line-height: 1.5;
     @include line-clamp(4);
@@ -1020,7 +1019,7 @@
 
   &__item {
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 30px;
     }
   }
 
@@ -1083,7 +1082,7 @@
   }
 
   &__list {
-    margin-right: 57px;
+    margin-right: 60px;
     column-count: 3;
 
     @include mq('tablet') {
@@ -1129,7 +1128,7 @@
     display: block;
     max-width: 200px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     padding: 13px 15px;
     background-color: $white;
     border: 1px solid $gray;
@@ -1153,7 +1152,7 @@
     display: flex;
     max-width: 200px;
     width: 100%;
-    padding: 13px 40px;
+    padding: 13px 39px;
     font-size: 14px;
     font-weight: 500;
     line-height: 1.3;
@@ -1278,4 +1277,415 @@
       }
     }
   }
+}
+
+.catalog-nav {
+  margin-bottom: 58px;
+  background: rgba(255, 122, 80, 0.1);
+
+  &__list {
+    display: flex;
+    padding: 24px 0;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #505050;
+
+    &:not(:first-child) {
+      position: relative;
+      margin-left: 6px;
+      padding-left: 12px;
+    }
+
+    &:not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 6px;
+      height: 10px;
+      background-image: url('../images/decor/chevron.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.catalog {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    @include mq('tablet-2') {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+
+    @include mq('tablet-2') {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__sort {
+    display: flex;
+    align-items: center;
+  }
+
+  &__inner {
+    display: flex;
+
+    @include mq('tablet-2') {
+      justify-content: center;
+    }
+
+    .popular__menu {
+      text-align: center;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 12px;
+      margin-bottom: 57px;
+
+      @include mq('phone') {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 10px;
+        grid-column-gap: 5px;
+      }
+    }
+  }
+}
+
+.jq-selectbox__select {
+  height: 47px;
+  margin-left: 21px;
+  padding: 15px 36px 0px 14px;
+  border: 1px solid $gray;
+  border-radius: 3px;
+  background: transparent;
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  color: $default;
+  text-shadow: none;
+  transition: border-color 0.5s, color 0.5s;
+
+  &:hover {
+    background: transparent;
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+.jq-selectbox.focused {
+  .jq-selectbox__select {
+    border-color: $accent;
+  }
+}
+
+.jq-selectbox__trigger {
+  border-left: none;
+}
+
+.jq-selectbox__trigger-arrow {
+  top: 21px;
+  width: 11px;
+  height: 6px;
+  padding-top: 7px;
+  background-image: url('../images/decor/chevron_bottom.svg');
+  background-repeat: no-repeat;
+  border: none
+}
+
+.jq-selectbox li:hover {
+  background-color: $accent;
+  color: $white;
+}
+
+.jq-selectbox li.selected {
+  background-color: $accent;
+  color: $white;
+}
+
+.filter-aside {
+  margin-right: 30px;
+  transition: transform 0.7s;
+
+  @include mq('tablet-2') {
+    position: absolute;
+    top: 0;
+    z-index: 11;
+    margin-left: -15px;
+    padding: 80px 50px 5px 15px;
+    background-color: $white;
+    transform: translateX(-200%);
+    overflow-y: scroll;
+  }
+
+  &__close {
+    display: none;
+
+    @include mq('tablet-2') {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 11px;
+      background-color: #FAEDED;
+      border-radius: 3px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-bottom: -5px;
+    }
+  }
+
+  &.active {
+    transform: translateX(0);
+    height: 100vh;
+  }
+
+  &__criteria {
+    max-width: 271px;
+    width: 100%;
+  }
+
+  &__criteria {
+    padding: 15px 15px 25px;
+    background: $white;
+    border: 1px solid $silver;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid $silver;
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__label {
+    padding-left: 36px;
+    letter-spacing: 0.03em;
+
+    &:hover+.filter-aside__style {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+
+  &__style {
+    position: absolute;
+    margin-left: -36px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid $silver;
+    background-color: #FAEDED;
+  }
+
+  &__сheckbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:focus+.filter-aside__style {
+      border-color: $accent;
+    }
+
+    &:checked+.filter-aside__style::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 9px;
+      background-image: url('../images/decor/сheck.svg');
+    }
+
+    &:checked+.filter-aside__style {
+      border-color: $title;
+    }
+  }
+
+  .irs {
+    max-width: 240px;
+    margin: 0 auto;
+
+    .irs-min,
+    .irs-max,
+    .irs-from,
+    .irs-to,
+    .irs-single {
+      display: none;
+    }
+
+    .irs-bar,
+    .irs-line {
+      height: 2px;
+    }
+
+    .irs-bar {
+      background-color: $accent;
+    }
+
+    .irs-handle {
+      top: 16px;
+      width: 18px;
+      border-radius: 50%;
+      background-color: $accent;
+    }
+
+    .irs-handle i:first-child {
+      display: none;
+    }
+  }
+}
+
+.filter-price {
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.2;
+    color: $gray;
+
+    &:not(:last-child) {
+      margin-right: 18px;
+    }
+  }
+
+  &__from,
+  &__to {
+    width: 70px;
+    padding: 12px 0;
+    margin: 0 4px;
+    text-align: center;
+    background-color: #FAEDED;
+    border-radius: 3px;
+    color: $default;
+  }
+}
+
+.stoke {
+
+  &__title {
+    text-align: center;
+    margin-bottom: 39px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    @include mq('tablet') {
+      display: none;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__slider {
+    display: none;
+
+    @include mq('tablet') {
+      display: block;
+    }
+
+    .slick-list {
+      margin-bottom: 22px;
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+
+      li {
+        padding-bottom: 3px;
+
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+
+        button {
+          font-size: 0;
+          background-color: $gray;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          transition: background-color 0.5s, box-shadow 0.5s;
+
+          &:hover {
+            background-color: #FFF2ED;
+            box-shadow: 0 0 0 2px $box-shadow;
+          }
+
+          &:focus {
+            background: $gray;
+            box-shadow: 0 0 0 2px $accent;
+          }
+
+          &:active {
+            box-shadow: none;
+            background-color: #FFAE94;
+          }
+        }
+
+        &.slick-active {
+
+          button {
+            background-color: $accent;
+
+            &:focus {
+              background-color: $gray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
 }

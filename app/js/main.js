@@ -2,6 +2,14 @@ $(function () {
 
   $('.filter-price__input').ionRangeSlider({
     type: "double",
+    onStart: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    },
+    onChange: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+  },
   })
 
   $('.slider-reviews__list').slick({
@@ -20,10 +28,9 @@ $(function () {
         }
       },
     ]
-
   });
 
-  $('.top-restaurants__slider').slick({
+  $('.top-restaurants__slider, .stoke__slider').slick({
     dots: true,
     arrows: false,
   });
@@ -32,6 +39,15 @@ $(function () {
     $('body').toggleClass('lock');
     $('.burger, .burger__line, .overlay, .side-nav').toggleClass('active');
   });
+
+  $('.filter-btn, .filter-aside__close').on('click', function () {
+    $('body').toggleClass('lock');
+    $('.filter-aside').toggleClass('active');
+  });
+
+
+
+  $('.catalog__sort-filter').styler();
 
 });
 
