@@ -75,7 +75,7 @@ body {
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px $box-shadow;
+    box-shadow: 0 0 0 2px rgba($accent, 0.7);
     border-radius: 5px;
   }
 
@@ -93,7 +93,7 @@ body {
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px $box-shadow;
+    box-shadow: 0 0 0 2px rgba($accent, 0.7);
     border-radius: 5px;
   }
 
@@ -116,13 +116,13 @@ body {
   &:hover {
     color: $accent;
     background-color: transparent;
-    box-shadow: 0 5px 12px rgba(255, 104, 56, 0.2), 0 0 0 2px $box-shadow;
+    box-shadow: 0 5px 12px rgba(255, 104, 56, 0.2), 0 0 0 2px rgba($accent, 0.7);
   }
 
   &:focus {
     color: $accent;
     background-color: rgba(255, 122, 80, 0.1);
-    box-shadow: 0 0 0 2px $box-shadow;
+    box-shadow: 0 0 0 2px rgba($accent, 0.7);
     border-radius: 5px;
   }
 
@@ -402,7 +402,6 @@ body {
   svg {
     width: 32px;
     height: 36px;
-
     fill: $accent;
   }
 }
