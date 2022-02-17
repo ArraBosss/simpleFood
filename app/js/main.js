@@ -35,11 +35,6 @@ $(function () {
     arrows: false,
   });
 
-  // $('.filter-btn, .filter-aside__close').on('click', function () {
-  //   $('body').toggleClass('lock');
-  //   $('.filter-aside, .overlay-aside').toggleClass('active');
-  // });
-
   $('.filter-btn, .filter-aside__close').on('click', function () {
     toggleFilter();
   });
@@ -54,8 +49,6 @@ $(function () {
     $('body').toggleClass('lock');
     $('.filter-aside, .overlay-aside').toggleClass('active');
   }
-
-
   
   $('.burger, .close').on('click', function () {
     toggleSideNav();
@@ -71,10 +64,6 @@ $(function () {
     $('body').toggleClass('lock');
     $('.burger, .burger__line, .overlay, .side-nav').toggleClass('active');
   }
-
-
-
-
 
   $('.catalog__sort-filter').styler();
 
