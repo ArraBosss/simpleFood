@@ -315,21 +315,23 @@ body {
   justify-content: center;
   align-items: center;
 
-  &__list {
-    display: flex;
-  }
+  
 
-  &__link {
+  &__link,
+  &__arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
     margin: 0 3px;
-    padding: 12px 16px 14px;
+    background-color: #FAEDED;
     font-size: 18px;
     line-height: 1;
     color: $title;
   }
 
   &__arrows {
-    margin: 0 3px;
-    padding: 14px 17px 13px;
 
     svg {
       width: 11px;
@@ -350,9 +352,11 @@ body {
   &__arrows {
     border: 2px solid transparent;
     border-radius: 3px;
-    background-color: #FAEDED;
-    transition: background-color 0.5s, color 0.5s, border-color 0.5s, box-shadow 0.5s, fill 0.5s;
 
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s, box-shadow 0.5s, fill 0.5s;
+  }
+
+  &__animation {
     &:hover {
       background-color: $accent;
       color: $white;
