@@ -9,7 +9,7 @@ const browserSync = require('browser-sync').create();
 const svgSprite = require('gulp-svg-sprite');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
-const fileInclude   = require('gulp-file-include');
+const fileInclude = require('gulp-file-include');
 
 const htmlInclude = () => {
   return src(['app/html/*.html']) 
@@ -147,4 +147,4 @@ exports.htmlInclude = htmlInclude;
 
 
 
-exports.default = parallel(htmlInclude, svgSprites,styles, scripts, browsersync, watching);
+exports.default = parallel(htmlInclude, svgSprites, styles, scripts, browsersync, watching);
